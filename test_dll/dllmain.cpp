@@ -11,12 +11,15 @@ BOOL APIENTRY DllMain( HMODULE hModule,
     case DLL_PROCESS_ATTACH:
     {
         OutputDebugStringA("DLL Loaded!");
+        MessageBox(0, L"Test DLL loaded", L"", MB_OK);
+        std::cout << "Enter the string to encrypt: ";
         std::string temp;
         std::string str_to_encrypt;
         int shift;
         std::getline(std::cin, str_to_encrypt);
         while (true)
         {
+            std::cout << "Enter encrypting shift: " << std::endl;
             std::getline(std::cin, temp);
             try
             {
